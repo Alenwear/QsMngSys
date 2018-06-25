@@ -1,0 +1,48 @@
+[ 2018-04-11T18:41:05+08:00 ] 127.0.0.1 /FlightMng.php?m=Handler&a=index
+INFO: [ app_begin ] --START--
+INFO: ReadHtmlCache Behavior ::run [ RunTime:0.001157s ]
+INFO: [ app_begin ] --END-- [ RunTime:0.001959s ]
+NOTIC: [2] session_start(): Cannot send session cache limiter - headers already sent /private/var/www/html/Core/Common/functions.php 第 566 行.
+NOTIC: [2048] Declaration of HandlerAction::show() should be compatible with Action::show($content, $charset = '', $contentType = '', $prefix = '') /private/var/www/html/FlightMng/Lib/Action/HandlerAction.class.php 第 202 行.
+SQL: DESCRIBE FlightData [ RunTime:0.000816s ]
+NOTIC: [8] Undefined index: DirLen /private/var/www/html/FlightMng/Lib/Action/HandlerAction.class.php 第 51 行.
+NOTIC: [8192] preg_replace(): The /e modifier is deprecated, use preg_replace_callback instead /private/var/www/html/Core/Lib/Core/Db.class.php 第 605 行.
+SQL: SELECT distinct CONCAT(FlightNo,'(',`Origin`,'->',`Destination`,')') as name,`FlightNo` FROM `FlightData` WHERE ( (FlightDate BETWEEN '2018-03-11' AND '2018-04-11') )  [ RunTime:0.000690s ]
+NOTIC: [2] Invalid argument supplied for foreach() /private/var/www/html/FlightMng/Lib/Action/HandlerAction.class.php 第 87 行.
+
+[ 2018-04-11T18:41:54+08:00 ] 127.0.0.1 /FlightMng.php?m=Handler&a=index
+INFO: [ app_begin ] --START--
+INFO: ReadHtmlCache Behavior ::run [ RunTime:0.000348s ]
+INFO: [ app_begin ] --END-- [ RunTime:0.000406s ]
+NOTIC: [2] session_start(): Cannot send session cache limiter - headers already sent /private/var/www/html/Core/Common/functions.php 第 566 行.
+NOTIC: [2048] Declaration of HandlerAction::show() should be compatible with Action::show($content, $charset = '', $contentType = '', $prefix = '') /private/var/www/html/FlightMng/Lib/Action/HandlerAction.class.php 第 202 行.
+SQL: DESCRIBE FlightData [ RunTime:0.000906s ]
+NOTIC: [8] Undefined index: DirLen /private/var/www/html/FlightMng/Lib/Action/HandlerAction.class.php 第 51 行.
+NOTIC: [8192] preg_replace(): The /e modifier is deprecated, use preg_replace_callback instead /private/var/www/html/Core/Lib/Core/Db.class.php 第 605 行.
+SQL: SELECT distinct CONCAT(FlightNo,'(',`Origin`,'->',`Destination`,')') as name,`FlightNo` FROM `FlightData` WHERE ( (FlightDate BETWEEN '2018-03-11' AND '2018-04-11') )  [ RunTime:0.000826s ]
+NOTIC: [2] Invalid argument supplied for foreach() /private/var/www/html/FlightMng/Lib/Action/HandlerAction.class.php 第 87 行.
+
+[ 2018-04-11T19:00:47+08:00 ] 127.0.0.1 /FlightMng.php?m=Handler&a=index
+INFO: [ app_begin ] --START--
+INFO: ReadHtmlCache Behavior ::run [ RunTime:0.000885s ]
+INFO: [ app_begin ] --END-- [ RunTime:0.000959s ]
+NOTIC: [2] session_start(): Cannot send session cache limiter - headers already sent /private/var/www/html/Core/Common/functions.php 第 566 行.
+NOTIC: [2048] Declaration of HandlerAction::show() should be compatible with Action::show($content, $charset = '', $contentType = '', $prefix = '') /private/var/www/html/FlightMng/Lib/Action/HandlerAction.class.php 第 202 行.
+SQL: DESCRIBE FlightData [ RunTime:0.002019s ]
+NOTIC: [8] Undefined index: DirLen /private/var/www/html/FlightMng/Lib/Action/HandlerAction.class.php 第 51 行.
+NOTIC: [8192] preg_replace(): The /e modifier is deprecated, use preg_replace_callback instead /private/var/www/html/Core/Lib/Core/Db.class.php 第 605 行.
+SQL: SELECT distinct CONCAT(FlightNo,'(',`Origin`,'->',`Destination`,')') as name,`FlightNo` FROM `FlightData` WHERE ( (FlightDate BETWEEN '2018-03-11' AND '2018-04-11') )  [ RunTime:0.000868s ]
+NOTIC: [2] Invalid argument supplied for foreach() /private/var/www/html/FlightMng/Lib/Action/HandlerAction.class.php 第 87 行.
+
+[ 2018-04-11T19:01:05+08:00 ] 127.0.0.1 /FlightMng.php?m=Handler&a=index
+INFO: [ app_begin ] --START--
+INFO: ReadHtmlCache Behavior ::run [ RunTime:0.000492s ]
+INFO: [ app_begin ] --END-- [ RunTime:0.000569s ]
+NOTIC: [2] session_start(): Cannot send session cache limiter - headers already sent /private/var/www/html/Core/Common/functions.php 第 566 行.
+NOTIC: [2048] Declaration of HandlerAction::show() should be compatible with Action::show($content, $charset = '', $contentType = '', $prefix = '') /private/var/www/html/FlightMng/Lib/Action/HandlerAction.class.php 第 202 行.
+SQL: DESCRIBE FlightData [ RunTime:0.000678s ]
+NOTIC: [8] Undefined index: DirLen /private/var/www/html/FlightMng/Lib/Action/HandlerAction.class.php 第 51 行.
+NOTIC: [8192] preg_replace(): The /e modifier is deprecated, use preg_replace_callback instead /private/var/www/html/Core/Lib/Core/Db.class.php 第 605 行.
+SQL: SELECT distinct CONCAT(FlightNo,'(',`Origin`,'->',`Destination`,')') as name,`FlightNo` FROM `FlightData` WHERE ( (FlightDate BETWEEN '2018-03-11' AND '2018-04-11') )  [ RunTime:0.000697s ]
+NOTIC: [2] Invalid argument supplied for foreach() /private/var/www/html/FlightMng/Lib/Action/HandlerAction.class.php 第 87 行.
+

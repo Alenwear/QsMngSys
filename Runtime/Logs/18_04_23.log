@@ -1,0 +1,110 @@
+[ 2018-04-23T10:48:16+08:00 ] 127.0.0.1 /FlightMng.php?m=Handler&a=index
+INFO: [ app_begin ] --START--
+INFO: ReadHtmlCache Behavior ::run [ RunTime:0.000541s ]
+INFO: [ app_begin ] --END-- [ RunTime:0.000643s ]
+NOTIC: [2] session_start(): Cannot send session cache limiter - headers already sent /private/var/www/html/Core/Common/functions.php 第 566 行.
+NOTIC: [2048] Declaration of HandlerAction::show() should be compatible with Action::show($content, $charset = '', $contentType = '', $prefix = '') /private/var/www/html/FlightMng/Lib/Action/HandlerAction.class.php 第 202 行.
+SQL: DESCRIBE FlightData [ RunTime:0.002142s ]
+NOTIC: [8] Undefined index: DirLen /private/var/www/html/FlightMng/Lib/Action/HandlerAction.class.php 第 51 行.
+NOTIC: [8192] preg_replace(): The /e modifier is deprecated, use preg_replace_callback instead /private/var/www/html/Core/Lib/Core/Db.class.php 第 605 行.
+SQL: SELECT distinct CONCAT(FlightNo,'(',`Origin`,'->',`Destination`,')') as name,`FlightNo` FROM `FlightData` WHERE ( (FlightDate BETWEEN '2018-03-23' AND '2018-04-23') )  [ RunTime:0.001265s ]
+SQL: SELECT TIMESTAMPDIFF(SECOND, '1970-1-1', FlightDate)*1000 as x ,AvgRate as y,FlightData.* FROM FlightData WHERE (FlightDate BETWEEN '2018-03-23' AND '2018-04-23') AND FlightNo= 'MU5694' ORDER BY FlightDate [ RunTime:0.002618s ]
+SQL: SELECT TIMESTAMPDIFF(SECOND, '1970-1-1', FlightDate)*1000 as x ,AvgRate as y,FlightData.* FROM FlightData WHERE (FlightDate BETWEEN '2018-03-23' AND '2018-04-23') AND FlightNo= 'MU5389' ORDER BY FlightDate [ RunTime:0.001961s ]
+SQL: SELECT TIMESTAMPDIFF(SECOND, '1970-1-1', FlightDate)*1000 as x ,AvgRate as y,FlightData.* FROM FlightData WHERE (FlightDate BETWEEN '2018-03-23' AND '2018-04-23') AND FlightNo= 'MU5695' ORDER BY FlightDate [ RunTime:0.000907s ]
+SQL: SELECT TIMESTAMPDIFF(SECOND, '1970-1-1', FlightDate)*1000 as x ,AvgRate as y,FlightData.* FROM FlightData WHERE (FlightDate BETWEEN '2018-03-23' AND '2018-04-23') AND FlightNo= 'MU5800' ORDER BY FlightDate [ RunTime:0.000684s ]
+SQL: SELECT TIMESTAMPDIFF(SECOND, '1970-1-1', FlightDate)*1000 as x ,AvgRate as y,FlightData.* FROM FlightData WHERE (FlightDate BETWEEN '2018-03-23' AND '2018-04-23') AND FlightNo= 'MU5799' ORDER BY FlightDate [ RunTime:0.000642s ]
+SQL: SELECT TIMESTAMPDIFF(SECOND, '1970-1-1', FlightDate)*1000 as x ,AvgRate as y,FlightData.* FROM FlightData WHERE (FlightDate BETWEEN '2018-03-23' AND '2018-04-23') AND FlightNo= 'MU5693' ORDER BY FlightDate [ RunTime:0.000650s ]
+SQL: SELECT TIMESTAMPDIFF(SECOND, '1970-1-1', FlightDate)*1000 as x ,AvgRate as y,FlightData.* FROM FlightData WHERE (FlightDate BETWEEN '2018-03-23' AND '2018-04-23') AND FlightNo= 'MU5696' ORDER BY FlightDate [ RunTime:0.000842s ]
+SQL: SELECT TIMESTAMPDIFF(SECOND, '1970-1-1', FlightDate)*1000 as x ,AvgRate as y,FlightData.* FROM FlightData WHERE (FlightDate BETWEEN '2018-03-23' AND '2018-04-23') AND FlightNo= 'CZ3363' ORDER BY FlightDate [ RunTime:0.001800s ]
+SQL: SELECT TIMESTAMPDIFF(SECOND, '1970-1-1', FlightDate)*1000 as x ,AvgRate as y,FlightData.* FROM FlightData WHERE (FlightDate BETWEEN '2018-03-23' AND '2018-04-23') AND FlightNo= 'CZ3364' ORDER BY FlightDate [ RunTime:0.001227s ]
+SQL: SELECT TIMESTAMPDIFF(SECOND, '1970-1-1', FlightDate)*1000 as x ,AvgRate as y,FlightData.* FROM FlightData WHERE (FlightDate BETWEEN '2018-03-23' AND '2018-04-23') AND FlightNo= '9C8926' ORDER BY FlightDate [ RunTime:0.000977s ]
+SQL: SELECT TIMESTAMPDIFF(SECOND, '1970-1-1', FlightDate)*1000 as x ,AvgRate as y,FlightData.* FROM FlightData WHERE (FlightDate BETWEEN '2018-03-23' AND '2018-04-23') AND FlightNo= 'xx-001' ORDER BY FlightDate [ RunTime:0.001263s ]
+
+[ 2018-04-23T12:09:54+08:00 ] 127.0.0.1 /FlightMng.php?m=Handler&a=index
+INFO: [ app_begin ] --START--
+INFO: ReadHtmlCache Behavior ::run [ RunTime:0.000537s ]
+INFO: [ app_begin ] --END-- [ RunTime:0.000619s ]
+NOTIC: [2] session_start(): Cannot send session cache limiter - headers already sent /private/var/www/html/Core/Common/functions.php 第 566 行.
+NOTIC: [2048] Declaration of HandlerAction::show() should be compatible with Action::show($content, $charset = '', $contentType = '', $prefix = '') /private/var/www/html/FlightMng/Lib/Action/HandlerAction.class.php 第 202 行.
+SQL: DESCRIBE FlightData [ RunTime:0.003042s ]
+NOTIC: [8] Undefined index: DirLen /private/var/www/html/FlightMng/Lib/Action/HandlerAction.class.php 第 51 行.
+NOTIC: [8192] preg_replace(): The /e modifier is deprecated, use preg_replace_callback instead /private/var/www/html/Core/Lib/Core/Db.class.php 第 605 行.
+SQL: SELECT distinct CONCAT(FlightNo,'(',`Origin`,'->',`Destination`,')') as name,`FlightNo` FROM `FlightData` WHERE ( (FlightDate BETWEEN '2018-03-23' AND '2018-04-23') )  [ RunTime:0.001764s ]
+SQL: SELECT TIMESTAMPDIFF(SECOND, '1970-1-1', FlightDate)*1000 as x ,AvgRate as y,FlightData.* FROM FlightData WHERE (FlightDate BETWEEN '2018-03-23' AND '2018-04-23') AND FlightNo= 'MU5694' ORDER BY FlightDate [ RunTime:0.000942s ]
+SQL: SELECT TIMESTAMPDIFF(SECOND, '1970-1-1', FlightDate)*1000 as x ,AvgRate as y,FlightData.* FROM FlightData WHERE (FlightDate BETWEEN '2018-03-23' AND '2018-04-23') AND FlightNo= 'MU5389' ORDER BY FlightDate [ RunTime:0.000801s ]
+SQL: SELECT TIMESTAMPDIFF(SECOND, '1970-1-1', FlightDate)*1000 as x ,AvgRate as y,FlightData.* FROM FlightData WHERE (FlightDate BETWEEN '2018-03-23' AND '2018-04-23') AND FlightNo= 'MU5695' ORDER BY FlightDate [ RunTime:0.000769s ]
+SQL: SELECT TIMESTAMPDIFF(SECOND, '1970-1-1', FlightDate)*1000 as x ,AvgRate as y,FlightData.* FROM FlightData WHERE (FlightDate BETWEEN '2018-03-23' AND '2018-04-23') AND FlightNo= 'MU5800' ORDER BY FlightDate [ RunTime:0.000751s ]
+SQL: SELECT TIMESTAMPDIFF(SECOND, '1970-1-1', FlightDate)*1000 as x ,AvgRate as y,FlightData.* FROM FlightData WHERE (FlightDate BETWEEN '2018-03-23' AND '2018-04-23') AND FlightNo= 'MU5799' ORDER BY FlightDate [ RunTime:0.000699s ]
+SQL: SELECT TIMESTAMPDIFF(SECOND, '1970-1-1', FlightDate)*1000 as x ,AvgRate as y,FlightData.* FROM FlightData WHERE (FlightDate BETWEEN '2018-03-23' AND '2018-04-23') AND FlightNo= 'MU5693' ORDER BY FlightDate [ RunTime:0.000886s ]
+SQL: SELECT TIMESTAMPDIFF(SECOND, '1970-1-1', FlightDate)*1000 as x ,AvgRate as y,FlightData.* FROM FlightData WHERE (FlightDate BETWEEN '2018-03-23' AND '2018-04-23') AND FlightNo= 'MU5696' ORDER BY FlightDate [ RunTime:0.002962s ]
+SQL: SELECT TIMESTAMPDIFF(SECOND, '1970-1-1', FlightDate)*1000 as x ,AvgRate as y,FlightData.* FROM FlightData WHERE (FlightDate BETWEEN '2018-03-23' AND '2018-04-23') AND FlightNo= 'CZ3363' ORDER BY FlightDate [ RunTime:0.001908s ]
+SQL: SELECT TIMESTAMPDIFF(SECOND, '1970-1-1', FlightDate)*1000 as x ,AvgRate as y,FlightData.* FROM FlightData WHERE (FlightDate BETWEEN '2018-03-23' AND '2018-04-23') AND FlightNo= 'CZ3364' ORDER BY FlightDate [ RunTime:0.001268s ]
+SQL: SELECT TIMESTAMPDIFF(SECOND, '1970-1-1', FlightDate)*1000 as x ,AvgRate as y,FlightData.* FROM FlightData WHERE (FlightDate BETWEEN '2018-03-23' AND '2018-04-23') AND FlightNo= '9C8926' ORDER BY FlightDate [ RunTime:0.001107s ]
+SQL: SELECT TIMESTAMPDIFF(SECOND, '1970-1-1', FlightDate)*1000 as x ,AvgRate as y,FlightData.* FROM FlightData WHERE (FlightDate BETWEEN '2018-03-23' AND '2018-04-23') AND FlightNo= 'xx-001' ORDER BY FlightDate [ RunTime:0.000776s ]
+
+[ 2018-04-23T12:10:51+08:00 ] 127.0.0.1 /FlightMng.php?m=Handler&a=index
+INFO: [ app_begin ] --START--
+INFO: ReadHtmlCache Behavior ::run [ RunTime:0.000953s ]
+INFO: [ app_begin ] --END-- [ RunTime:0.001034s ]
+NOTIC: [2] session_start(): Cannot send session cache limiter - headers already sent /private/var/www/html/Core/Common/functions.php 第 566 行.
+NOTIC: [2048] Declaration of HandlerAction::show() should be compatible with Action::show($content, $charset = '', $contentType = '', $prefix = '') /private/var/www/html/FlightMng/Lib/Action/HandlerAction.class.php 第 202 行.
+SQL: DESCRIBE FlightData [ RunTime:0.000813s ]
+NOTIC: [8] Undefined index: DirLen /private/var/www/html/FlightMng/Lib/Action/HandlerAction.class.php 第 51 行.
+NOTIC: [8192] preg_replace(): The /e modifier is deprecated, use preg_replace_callback instead /private/var/www/html/Core/Lib/Core/Db.class.php 第 605 行.
+SQL: SELECT distinct CONCAT(FlightNo,'(',`Origin`,'->',`Destination`,')') as name,`FlightNo` FROM `FlightData` WHERE ( (FlightDate BETWEEN '2018-03-23' AND '2018-04-23') )  [ RunTime:0.001328s ]
+SQL: SELECT TIMESTAMPDIFF(SECOND, '1970-1-1', FlightDate)*1000 as x ,AvgRate as y,FlightData.* FROM FlightData WHERE (FlightDate BETWEEN '2018-03-23' AND '2018-04-23') AND FlightNo= 'MU5694' ORDER BY FlightDate [ RunTime:0.001602s ]
+SQL: SELECT TIMESTAMPDIFF(SECOND, '1970-1-1', FlightDate)*1000 as x ,AvgRate as y,FlightData.* FROM FlightData WHERE (FlightDate BETWEEN '2018-03-23' AND '2018-04-23') AND FlightNo= 'MU5389' ORDER BY FlightDate [ RunTime:0.001433s ]
+SQL: SELECT TIMESTAMPDIFF(SECOND, '1970-1-1', FlightDate)*1000 as x ,AvgRate as y,FlightData.* FROM FlightData WHERE (FlightDate BETWEEN '2018-03-23' AND '2018-04-23') AND FlightNo= 'MU5695' ORDER BY FlightDate [ RunTime:0.001232s ]
+SQL: SELECT TIMESTAMPDIFF(SECOND, '1970-1-1', FlightDate)*1000 as x ,AvgRate as y,FlightData.* FROM FlightData WHERE (FlightDate BETWEEN '2018-03-23' AND '2018-04-23') AND FlightNo= 'MU5800' ORDER BY FlightDate [ RunTime:0.000775s ]
+SQL: SELECT TIMESTAMPDIFF(SECOND, '1970-1-1', FlightDate)*1000 as x ,AvgRate as y,FlightData.* FROM FlightData WHERE (FlightDate BETWEEN '2018-03-23' AND '2018-04-23') AND FlightNo= 'MU5799' ORDER BY FlightDate [ RunTime:0.001677s ]
+SQL: SELECT TIMESTAMPDIFF(SECOND, '1970-1-1', FlightDate)*1000 as x ,AvgRate as y,FlightData.* FROM FlightData WHERE (FlightDate BETWEEN '2018-03-23' AND '2018-04-23') AND FlightNo= 'MU5693' ORDER BY FlightDate [ RunTime:0.001478s ]
+SQL: SELECT TIMESTAMPDIFF(SECOND, '1970-1-1', FlightDate)*1000 as x ,AvgRate as y,FlightData.* FROM FlightData WHERE (FlightDate BETWEEN '2018-03-23' AND '2018-04-23') AND FlightNo= 'MU5696' ORDER BY FlightDate [ RunTime:0.000895s ]
+SQL: SELECT TIMESTAMPDIFF(SECOND, '1970-1-1', FlightDate)*1000 as x ,AvgRate as y,FlightData.* FROM FlightData WHERE (FlightDate BETWEEN '2018-03-23' AND '2018-04-23') AND FlightNo= 'CZ3363' ORDER BY FlightDate [ RunTime:0.000681s ]
+SQL: SELECT TIMESTAMPDIFF(SECOND, '1970-1-1', FlightDate)*1000 as x ,AvgRate as y,FlightData.* FROM FlightData WHERE (FlightDate BETWEEN '2018-03-23' AND '2018-04-23') AND FlightNo= 'CZ3364' ORDER BY FlightDate [ RunTime:0.000645s ]
+SQL: SELECT TIMESTAMPDIFF(SECOND, '1970-1-1', FlightDate)*1000 as x ,AvgRate as y,FlightData.* FROM FlightData WHERE (FlightDate BETWEEN '2018-03-23' AND '2018-04-23') AND FlightNo= '9C8926' ORDER BY FlightDate [ RunTime:0.000644s ]
+SQL: SELECT TIMESTAMPDIFF(SECOND, '1970-1-1', FlightDate)*1000 as x ,AvgRate as y,FlightData.* FROM FlightData WHERE (FlightDate BETWEEN '2018-03-23' AND '2018-04-23') AND FlightNo= 'xx-001' ORDER BY FlightDate [ RunTime:0.000642s ]
+
+[ 2018-04-23T12:43:25+08:00 ] 127.0.0.1 /FlightMng.php?m=Handler&a=index
+INFO: [ app_begin ] --START--
+INFO: ReadHtmlCache Behavior ::run [ RunTime:0.004013s ]
+INFO: [ app_begin ] --END-- [ RunTime:0.004099s ]
+NOTIC: [2] session_start(): Cannot send session cache limiter - headers already sent /private/var/www/html/Core/Common/functions.php 第 566 行.
+NOTIC: [2048] Declaration of HandlerAction::show() should be compatible with Action::show($content, $charset = '', $contentType = '', $prefix = '') /private/var/www/html/FlightMng/Lib/Action/HandlerAction.class.php 第 202 行.
+SQL: DESCRIBE FlightData [ RunTime:0.001101s ]
+NOTIC: [8] Undefined index: DirLen /private/var/www/html/FlightMng/Lib/Action/HandlerAction.class.php 第 51 行.
+NOTIC: [8192] preg_replace(): The /e modifier is deprecated, use preg_replace_callback instead /private/var/www/html/Core/Lib/Core/Db.class.php 第 605 行.
+SQL: SELECT distinct CONCAT(FlightNo,'(',`Origin`,'->',`Destination`,')') as name,`FlightNo` FROM `FlightData` WHERE ( (FlightDate BETWEEN '2018-03-23' AND '2018-04-23') )  [ RunTime:0.000915s ]
+SQL: SELECT TIMESTAMPDIFF(SECOND, '1970-1-1', FlightDate)*1000 as x ,AvgRate as y,FlightData.* FROM FlightData WHERE (FlightDate BETWEEN '2018-03-23' AND '2018-04-23') AND FlightNo= 'MU5694' ORDER BY FlightDate [ RunTime:0.000741s ]
+SQL: SELECT TIMESTAMPDIFF(SECOND, '1970-1-1', FlightDate)*1000 as x ,AvgRate as y,FlightData.* FROM FlightData WHERE (FlightDate BETWEEN '2018-03-23' AND '2018-04-23') AND FlightNo= 'MU5389' ORDER BY FlightDate [ RunTime:0.000648s ]
+SQL: SELECT TIMESTAMPDIFF(SECOND, '1970-1-1', FlightDate)*1000 as x ,AvgRate as y,FlightData.* FROM FlightData WHERE (FlightDate BETWEEN '2018-03-23' AND '2018-04-23') AND FlightNo= 'MU5695' ORDER BY FlightDate [ RunTime:0.000643s ]
+SQL: SELECT TIMESTAMPDIFF(SECOND, '1970-1-1', FlightDate)*1000 as x ,AvgRate as y,FlightData.* FROM FlightData WHERE (FlightDate BETWEEN '2018-03-23' AND '2018-04-23') AND FlightNo= 'MU5800' ORDER BY FlightDate [ RunTime:0.000645s ]
+SQL: SELECT TIMESTAMPDIFF(SECOND, '1970-1-1', FlightDate)*1000 as x ,AvgRate as y,FlightData.* FROM FlightData WHERE (FlightDate BETWEEN '2018-03-23' AND '2018-04-23') AND FlightNo= 'MU5799' ORDER BY FlightDate [ RunTime:0.000643s ]
+SQL: SELECT TIMESTAMPDIFF(SECOND, '1970-1-1', FlightDate)*1000 as x ,AvgRate as y,FlightData.* FROM FlightData WHERE (FlightDate BETWEEN '2018-03-23' AND '2018-04-23') AND FlightNo= 'MU5693' ORDER BY FlightDate [ RunTime:0.000644s ]
+SQL: SELECT TIMESTAMPDIFF(SECOND, '1970-1-1', FlightDate)*1000 as x ,AvgRate as y,FlightData.* FROM FlightData WHERE (FlightDate BETWEEN '2018-03-23' AND '2018-04-23') AND FlightNo= 'MU5696' ORDER BY FlightDate [ RunTime:0.000847s ]
+SQL: SELECT TIMESTAMPDIFF(SECOND, '1970-1-1', FlightDate)*1000 as x ,AvgRate as y,FlightData.* FROM FlightData WHERE (FlightDate BETWEEN '2018-03-23' AND '2018-04-23') AND FlightNo= 'CZ3363' ORDER BY FlightDate [ RunTime:0.000689s ]
+SQL: SELECT TIMESTAMPDIFF(SECOND, '1970-1-1', FlightDate)*1000 as x ,AvgRate as y,FlightData.* FROM FlightData WHERE (FlightDate BETWEEN '2018-03-23' AND '2018-04-23') AND FlightNo= 'CZ3364' ORDER BY FlightDate [ RunTime:0.000644s ]
+SQL: SELECT TIMESTAMPDIFF(SECOND, '1970-1-1', FlightDate)*1000 as x ,AvgRate as y,FlightData.* FROM FlightData WHERE (FlightDate BETWEEN '2018-03-23' AND '2018-04-23') AND FlightNo= '9C8926' ORDER BY FlightDate [ RunTime:0.000643s ]
+SQL: SELECT TIMESTAMPDIFF(SECOND, '1970-1-1', FlightDate)*1000 as x ,AvgRate as y,FlightData.* FROM FlightData WHERE (FlightDate BETWEEN '2018-03-23' AND '2018-04-23') AND FlightNo= 'xx-001' ORDER BY FlightDate [ RunTime:0.000660s ]
+
+[ 2018-04-23T12:43:31+08:00 ] 127.0.0.1 /FlightMng.php?m=Handler&a=index
+INFO: [ app_begin ] --START--
+INFO: ReadHtmlCache Behavior ::run [ RunTime:0.000934s ]
+INFO: [ app_begin ] --END-- [ RunTime:0.001032s ]
+NOTIC: [2] session_start(): Cannot send session cache limiter - headers already sent /private/var/www/html/Core/Common/functions.php 第 566 行.
+NOTIC: [2048] Declaration of HandlerAction::show() should be compatible with Action::show($content, $charset = '', $contentType = '', $prefix = '') /private/var/www/html/FlightMng/Lib/Action/HandlerAction.class.php 第 202 行.
+SQL: DESCRIBE FlightData [ RunTime:0.000913s ]
+NOTIC: [8] Undefined index: DirLen /private/var/www/html/FlightMng/Lib/Action/HandlerAction.class.php 第 51 行.
+NOTIC: [8192] preg_replace(): The /e modifier is deprecated, use preg_replace_callback instead /private/var/www/html/Core/Lib/Core/Db.class.php 第 605 行.
+SQL: SELECT distinct CONCAT(FlightNo,'(',`Origin`,'->',`Destination`,')') as name,`FlightNo` FROM `FlightData` WHERE ( (FlightDate BETWEEN '2018-03-23' AND '2018-04-23') )  [ RunTime:0.000884s ]
+SQL: SELECT TIMESTAMPDIFF(SECOND, '1970-1-1', FlightDate)*1000 as x ,AvgRate as y,FlightData.* FROM FlightData WHERE (FlightDate BETWEEN '2018-03-23' AND '2018-04-23') AND FlightNo= 'MU5694' ORDER BY FlightDate [ RunTime:0.000858s ]
+SQL: SELECT TIMESTAMPDIFF(SECOND, '1970-1-1', FlightDate)*1000 as x ,AvgRate as y,FlightData.* FROM FlightData WHERE (FlightDate BETWEEN '2018-03-23' AND '2018-04-23') AND FlightNo= 'MU5389' ORDER BY FlightDate [ RunTime:0.001507s ]
+SQL: SELECT TIMESTAMPDIFF(SECOND, '1970-1-1', FlightDate)*1000 as x ,AvgRate as y,FlightData.* FROM FlightData WHERE (FlightDate BETWEEN '2018-03-23' AND '2018-04-23') AND FlightNo= 'MU5695' ORDER BY FlightDate [ RunTime:0.004326s ]
+SQL: SELECT TIMESTAMPDIFF(SECOND, '1970-1-1', FlightDate)*1000 as x ,AvgRate as y,FlightData.* FROM FlightData WHERE (FlightDate BETWEEN '2018-03-23' AND '2018-04-23') AND FlightNo= 'MU5800' ORDER BY FlightDate [ RunTime:0.001001s ]
+SQL: SELECT TIMESTAMPDIFF(SECOND, '1970-1-1', FlightDate)*1000 as x ,AvgRate as y,FlightData.* FROM FlightData WHERE (FlightDate BETWEEN '2018-03-23' AND '2018-04-23') AND FlightNo= 'MU5799' ORDER BY FlightDate [ RunTime:0.000833s ]
+SQL: SELECT TIMESTAMPDIFF(SECOND, '1970-1-1', FlightDate)*1000 as x ,AvgRate as y,FlightData.* FROM FlightData WHERE (FlightDate BETWEEN '2018-03-23' AND '2018-04-23') AND FlightNo= 'MU5693' ORDER BY FlightDate [ RunTime:0.001084s ]
+SQL: SELECT TIMESTAMPDIFF(SECOND, '1970-1-1', FlightDate)*1000 as x ,AvgRate as y,FlightData.* FROM FlightData WHERE (FlightDate BETWEEN '2018-03-23' AND '2018-04-23') AND FlightNo= 'MU5696' ORDER BY FlightDate [ RunTime:0.000924s ]
+SQL: SELECT TIMESTAMPDIFF(SECOND, '1970-1-1', FlightDate)*1000 as x ,AvgRate as y,FlightData.* FROM FlightData WHERE (FlightDate BETWEEN '2018-03-23' AND '2018-04-23') AND FlightNo= 'CZ3363' ORDER BY FlightDate [ RunTime:0.000734s ]
+SQL: SELECT TIMESTAMPDIFF(SECOND, '1970-1-1', FlightDate)*1000 as x ,AvgRate as y,FlightData.* FROM FlightData WHERE (FlightDate BETWEEN '2018-03-23' AND '2018-04-23') AND FlightNo= 'CZ3364' ORDER BY FlightDate [ RunTime:0.000638s ]
+SQL: SELECT TIMESTAMPDIFF(SECOND, '1970-1-1', FlightDate)*1000 as x ,AvgRate as y,FlightData.* FROM FlightData WHERE (FlightDate BETWEEN '2018-03-23' AND '2018-04-23') AND FlightNo= '9C8926' ORDER BY FlightDate [ RunTime:0.000650s ]
+SQL: SELECT TIMESTAMPDIFF(SECOND, '1970-1-1', FlightDate)*1000 as x ,AvgRate as y,FlightData.* FROM FlightData WHERE (FlightDate BETWEEN '2018-03-23' AND '2018-04-23') AND FlightNo= 'xx-001' ORDER BY FlightDate [ RunTime:0.000645s ]
+

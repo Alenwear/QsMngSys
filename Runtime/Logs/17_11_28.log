@@ -1,0 +1,24 @@
+[ 2017-11-28T11:06:09+08:00 ] 172.16.67.108 /FlightMng.php?m=Welcome&a=Qry&Export=true
+INFO: [ app_begin ] --START--
+INFO: ReadHtmlCache Behavior ::run [ RunTime:0.000186s ]
+INFO: [ app_begin ] --END-- [ RunTime:0.000414s ]
+SQL: DESCRIBE FlightData [ RunTime:0.116314s ]
+NOTIC: [8192] preg_replace(): The /e modifier is deprecated, use preg_replace_callback instead /var/www/html/Core/Lib/Core/Db.class.php 第 605 行.
+SQL: SELECT `FlightDate`,`FlightNo`,`Origin`,`Destination`,`AirplaneNo`,`AirplaneModel`,`SeatsAtThisTime`,`ArrAdult`,`ArrChildren`,`ArrBaby`,`ArrPeopleCnt`,`ArrCargo`,`ArrMail`,`ArrLuggage`,`ArrRate`,`Adult`,`Children`,`Baby`,`PeopleCnt`,`Cargo`,`Mail`,`Luggage`,`ToRate`,(ToRate+ArrRate)/2,`GoStationAdult`,`GoStationChildren`,`GoStationBaby` FROM `FlightData` WHERE ( 1=1  ) ORDER BY FlightDate,FlightNo ASC  [ RunTime:0.425120s ]
+
+[ 2017-11-28T11:13:12+08:00 ] 172.16.67.108 /FlightMng.php?m=Welcome&a=Qry&Export=true
+INFO: [ app_begin ] --START--
+INFO: ReadHtmlCache Behavior ::run [ RunTime:0.001247s ]
+INFO: [ app_begin ] --END-- [ RunTime:0.001486s ]
+SQL: DESCRIBE FlightData [ RunTime:0.001362s ]
+NOTIC: [8192] preg_replace(): The /e modifier is deprecated, use preg_replace_callback instead /var/www/html/Core/Lib/Core/Db.class.php 第 605 行.
+SQL: SELECT `FlightDate`,`FlightNo`,`Origin`,`Destination`,`AirplaneNo`,`AirplaneModel`,`SeatsAtThisTime`,`ArrAdult`,`ArrChildren`,`ArrBaby`,`ArrPeopleCnt`,`ArrCargo`,`ArrMail`,`ArrLuggage`,`ArrRate`,`Adult`,`Children`,`Baby`,`PeopleCnt`,`Cargo`,`Mail`,`Luggage`,`ToRate`,(ToRate+ArrRate)/2,`GoStationAdult`,`GoStationChildren`,`GoStationBaby` FROM `FlightData` WHERE ( 1=1  ) ORDER BY FlightDate,FlightNo ASC  [ RunTime:0.362974s ]
+
+[ 2017-11-28T11:19:06+08:00 ] 172.16.67.108 /FlightMng.php?m=Welcome&a=Qry&Export=true
+INFO: [ app_begin ] --START--
+INFO: ReadHtmlCache Behavior ::run [ RunTime:0.000206s ]
+INFO: [ app_begin ] --END-- [ RunTime:0.000395s ]
+SQL: DESCRIBE FlightData [ RunTime:0.088449s ]
+NOTIC: [8192] preg_replace(): The /e modifier is deprecated, use preg_replace_callback instead /var/www/html/Core/Lib/Core/Db.class.php 第 605 行.
+SQL: SELECT `FlightDate`,`FlightNo`,`Origin`,`Destination`,`AirplaneNo`,`AirplaneModel`,`SeatsAtThisTime`,`ArrAdult`,`ArrChildren`,`ArrBaby`,`ArrPeopleCnt`,`ArrCargo`,`ArrMail`,`ArrLuggage`,`ArrRate`,`Adult`,`Children`,`Baby`,`PeopleCnt`,`Cargo`,`Mail`,`Luggage`,`ToRate`,(ToRate+ArrRate)/2,`GoStationAdult`,`GoStationChildren`,`GoStationBaby` FROM `FlightData` WHERE ( 1=1  ) ORDER BY FlightDate,FlightNo ASC  [ RunTime:0.565778s ]
+
