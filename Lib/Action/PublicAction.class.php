@@ -10,11 +10,10 @@ class PublicAction extends Action
        parent::__construct();
 
         //$this->CheckBrowser();
-        if(empty(session("UserID"))){
+       /*f(empty(session("UserID"))){
             $this->redirect("Login/index");
         }
-         //获取航站名称，此处省略，直接赋值为洛阳
-        $this->StationName = "洛阳";
+        */
     }
 
     protected $tb_name = "";

@@ -173,63 +173,16 @@
                 <div class="col-sm-10 col-sm-offset-1">
                     <div style="margin-top: 10px">
                         <div class="form-group">
-                            <div class="form-inline ">
+                            <div class="form-inline">
                                 <label class="col-sm-2 control-label">执法库:</label>
+                                    <div class="col-sm-offset-2"  >
+                                       <div id="CBoxParent" style="margin-left: 5px;">
+                                            <input type="hidden" name="CurCheckDBS" id="CurCheckDBSInput" value=""/>
+                                       </div>
+                                    </div>
 
-                                    <div class="checkbox">
-                                        <label>
-                                            <input type="checkbox"> 机务部法定自查库
-                                        </label>
-                                    </div>
-                                    <div class="checkbox">
-                                        <label>
-                                            <input type="checkbox"> 机务部法定自查库
-                                        </label>
-                                    </div>
-                                    <div class="checkbox">
-                                        <label>
-                                            <input type="checkbox"> 机务部法定自查库
-                                        </label>
-                                    </div>
-                                <div class="checkbox">
-                                    <label>
-                                        <input type="checkbox"> 机务部法定自查库
-                                    </label>
-                                </div>
-                                <div class="checkbox">
-                                    <label>
-                                        <input type="checkbox"> 机务部法定自查库
-                                    </label>
-                                </div>
-                                <div class="checkbox">
-                                    <label>
-                                        <input type="checkbox"> 机务部法定自查库
-                                    </label>
-                                </div>
-                                <div class="checkbox">
-                                    <label>
-                                        <input type="checkbox"> 机务部法定自查库
-                                    </label>
-                                </div>
-                                <div class="checkbox">
-                                    <label>
-                                        <input type="checkbox"> 机务部法定自查库
-                                    </label>
-                                </div>
-                                <div class="checkbox">
-                                    <label>
-                                        <input type="checkbox"> 机务部法定自查库
-                                    </label>
-                                </div> <div class="checkbox">
-                                <label>
-                                    <input type="checkbox"> 机务部法定自查库
-                                </label>
                             </div>
 
-
-
-
-                            </div>
                             <div style="margin-top: 15px">
                                 <label class="col-sm-2 control-label" >来源类型:</label>
                                 <div class="col-sm-3">
@@ -315,11 +268,12 @@
                         <tr>
                             <th >序号</th>
                             <th >类型</th>
+                            <th>所在库</th>
                             <th>来源</th>
                             <th >项目</th>
                             <th >内容</th>
-                            <th class="col-sm-4">标准</th>
-                            <th class="col-sm-4">符合性判定标准</th>
+                            <th class="col-sm-3">标准</th>
+                            <th class="col-sm-3">符合性判定标准</th>
                             <th >修订</th>
                             <th >删除</th>
                         </tr>
@@ -331,6 +285,9 @@
                                 </td>
                                 <td>
                                     <?php echo ($vo["CheckSourceType"]); ?>
+                                </td>
+                                <td>
+                                    <?php echo ($vo["BelongDBs"]); ?>
                                 </td>
                                 <td>
                                     <?php echo ($vo["CheckSource"]); ?>
@@ -467,6 +424,8 @@
 </body>
 <script>
     $(function () {
+        var CheckBaseDBs = <?php echo (($CheckBaseDB)?($CheckBaseDB):[]); ?>;
+        var CurCheckDBs = <?php echo (($CurCheckDBs)?($CurCheckDBs):[]); ?>;
         var ActiveLi = "<?php echo (($myActiveLi)?($myActiveLi):Confli1); ?>";
         var CurCheckSourceType = "<?php echo (($CheckSourceType)?($CheckSourceType):''); ?>";
         var CurCheckSource = "<?php echo (($CheckSource)?($CheckSource):''); ?>";
@@ -512,6 +471,42 @@
         $("a[RXDBtn]").click(function () {
            $("#mForm").attr("action", "<?php echo U('CheckBaseMng/MdfCheck');?>" + "&id="+$("#MdfID").val()) ;
            $("#mForm").submit();
+        });
+
+        for(i =0;i<CheckBaseDBs.length;i++){
+            $("#CBoxParent").append('<div class="checkbox" style="margin-left: 10px;"><label ><input type="checkbox" DBCBox value="'+CheckBaseDBs[i]+'"> '+CheckBaseDBs[i]+'</label></div>');
+        }
+
+
+        for(j=0;j<CurCheckDBs.length;j++){
+                $('input[value="'+CurCheckDBs[j]+'"]').prop("checked","checked");
+                //alert(CurCheckDBs[j]);
+        }
+
+
+        $("input[DBCBox]").click(function () {
+            var DBS = '';
+            var isToDEL= false;
+            if($(this).is(":checked")){
+                CurCheckDBs.push($(this).val());
+            }else{
+                isToDEL =true;
+            }
+
+            for(i=0;i<CurCheckDBs.length;i++){
+                if(isToDEL && CurCheckDBs[i]==$(this).val() ){
+                    CurCheckDBs.splice(i,1);
+                    i--;
+                }else{
+                    if(DBS==''){
+                        DBS = CurCheckDBs[i] ;
+                    }else{
+                        DBS += '|' + CurCheckDBs[i];
+                    }
+                }
+            }
+
+            $("#CurCheckDBSInput").val(DBS);
         });
         $("#CheckSourceTypeSel option[value="+CurCheckSourceType+"]").attr("selected", true);
         $("#CheckSource option[value="+CurCheckSource+"]").attr("selected", true);

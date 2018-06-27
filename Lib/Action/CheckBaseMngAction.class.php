@@ -5,12 +5,17 @@
  * Date: 2018/6/21
  * Time: 14:57
  */
-class CheckBaseMngAction extends Action{
+class CheckBaseMngAction extends PublicAction{
     public $CurLi = "Confli1";
     public function index(){
         $tb_CheckSourceTab = M("PModel:CheckBaseSourceTab");
         $tb_CheckBaseDB = M("PModel:CheckBaseDB");
         $tb_CheckBase= M("PModel:CheckBase");
+        $tb_CheckBaseDB = M("PModel:CheckBaseDB");
+
+        $BaseDB_Ret = $this->TransArr2ToArr1($tb_CheckBaseDB->select(),"DBName");
+        $this->assign("CheckBaseDB",json_encode($BaseDB_Ret,JSON_NUMERIC_CHECK|JSON_UNESCAPED_UNICODE));
+
         $this->assign("CheckSourceType_ret",$tb_CheckSourceTab->select());
         $this->assign("CheckBaseDB_ret",$tb_CheckBaseDB->select());
         $this->assign("Check_ret",$tb_CheckBase->where(array("isValid"=>1))->select());
@@ -41,6 +46,7 @@ class CheckBaseMngAction extends Action{
 
     public function AddCheckDB()
     {
+
         $Name = trim(I("CheckBaseDBName"));
         if(empty($Name)){
             goto OUT;
@@ -61,6 +67,8 @@ class CheckBaseMngAction extends Action{
     }
 
     public function AddCheck(){
+        $CheckDBs_Org = I("CurCheckDBS");
+        $CheckDBs = explode('|',$CheckDBs_Org);
         $CheckSourceType  =I("CheckSourceType");
         $CheckSource  = I("CheckSource");
         $CheckSubject = I("CheckSubject");
@@ -71,6 +79,12 @@ class CheckBaseMngAction extends Action{
         $CheckStandard = str_replace(array("\r\n", "\r", "\n"),"</br>",$CheckStandard);
         $CheckConfirmStd = str_replace(array("\r\n", "\r", "\n"),"</br>",$CheckConfirmStd);
         $Warning = "";
+
+        if($CheckDBs[0]==""){
+            $Warning.= "请完整填写所有要素。";
+            goto OUT;
+        }
+
         if(empty($CheckSourceType)||empty($CheckSource)||empty($CheckSubject) || empty($CheckContent) || empty($CheckStandard)){
             $Warning.= "请完整填写所有要素。";
             goto OUT;
@@ -94,6 +108,7 @@ class CheckBaseMngAction extends Action{
         $data["CheckContent"] = $CheckContent;
         $data["CheckStandard"] = $CheckStandard;
         $data["CheckConfirmStd"] = $CheckConfirmStd;
+        $data["BelongDBs"] = $CheckDBs_Org;
         $data["isValid"] = 1;
         $data["OldID"] = 0;
 
@@ -122,7 +137,8 @@ class CheckBaseMngAction extends Action{
         if(empty($id)){
             goto OUT;
         }
-
+        $CheckDBs_Org = I("CurCheckDBS");
+        $CheckDBs = explode('|',$CheckDBs_Org);
         $CheckSourceType  =I("CheckSourceType");
         $CheckSource  = I("CheckSource");
         $CheckSubject = I("CheckSubject");
@@ -134,7 +150,7 @@ class CheckBaseMngAction extends Action{
         $CheckStandard = str_replace(array("\r\n", "\r", "\n"),"</br>",$CheckStandard);
         $Warning = "";
 
-        if(empty($CheckSourceType)||empty($CheckSource)||empty($CheckSubject) || empty($CheckContent) || empty($CheckStandard)){
+        if($CheckDBs[0]=="" || empty($CheckSourceType)||empty($CheckSource)||empty($CheckSubject) || empty($CheckContent) || empty($CheckStandard)){
             $Warning.= "请完整填写所有要素。";
             goto OUT;
         }
@@ -163,6 +179,7 @@ class CheckBaseMngAction extends Action{
         $data["CheckContent"] = $CheckContent;
         $data["CheckStandard"] = $CheckStandard;
         $data["CheckConfirmStd"] = $CheckConfirmStd;
+        $data["BelongDBs"] = $CheckDBs_Org;
         $data["isValid"] = 1;
 
         if(!empty($tb_CheckBase->where($data)->select())){
@@ -205,6 +222,7 @@ class CheckBaseMngAction extends Action{
         $this->assign("CheckStandard",str_replace("</br>","\n",$ret[0]["CheckStandard"]));
         $this->assign("CheckSubject",str_replace("</br>","\n",$ret[0]["CheckSubject"]));
         $this->assign("CheckConfirmStd",str_replace("</br>","\n",$ret[0]["CheckConfirmStd"]));
+        $this->assign("CurCheckDBs",str_replace("</br>","\n",json_encode(explode('|',$ret[0]["BelongDBs"]),JSON_NUMERIC_CHECK|JSON_UNESCAPED_UNICODE)));
         $this->assign("MdfID",$id);
         OUT:
             $this->index();
