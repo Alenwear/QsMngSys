@@ -88,16 +88,28 @@
                     </div>
               <hr/>
 
-                <div class="col-sm-12">
-                    <table class="table  bootstrap-datatable datatable  table-bordered responsive table-hover">
+                <div class="col-sm-12"  style="overflow:scroll;">
+                    <table class="table  bootstrap-datatable datatable  table-bordered responsive table-hover" style="min-width:  150%;"
+                           data-toggle="table"
+                           data-toolbar="#toolbar"
+                           data-search="true"
+                           data-show-refresh="true"
+                           data-show-toggle="true"
+                           data-show-columns="true"
+                           data-show-export="true"
+                           data-minimum-count-columns="2"
+                           data-id-field="id"
+                           data-show-footer="false"
+                           data-classes="table table-bordered"
+                           data-response-handler="responseHandler">
                         <thead>
                         <tr>
                             <th >序号</th>
-                            <th >类型</th>
-                            <th>来源</th>
-                            <th >项目</th>
-                            <th >内容</th>
-                            <th class="col-sm-4">标准</th>
+                            <th class="col-sm-1">类型</th>
+                            <th class="col-sm-1">来源</th>
+                            <th class="col-sm-1">项目</th>
+                            <th class="col-sm-2">内容</th>
+                            <th class="col-sm-3">标准</th>
                             <th class="col-sm-4">符合性判定标准</th>
                             <th >加入</th>
                             <th >状态</th>

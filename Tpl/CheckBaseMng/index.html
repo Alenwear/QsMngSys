@@ -3,7 +3,13 @@
 <head>
     <meta charset="UTF-8">
     <title>执法依据</title>
-
+    <style>
+        .scroll_table_content{
+            width:100%;
+            height:600px;
+            overflow:auto;
+        }
+    </style>
 </head>
 <body class="container-fluid">
 <ul id="myTab" class="nav nav-tabs" >
@@ -14,6 +20,7 @@
     </li>
     <li id="Confli2"><a href="#Conf2" data-toggle="tab">执法依据来源</a></li>
     <li id="Confli3"><a href="#Conf3" data-toggle="tab">执法库</a></li>
+    <li id="Confli4"><a href="#Conf4" data-toggle="tab">执法条款清单</a></li>
 </ul>
 <div id="myTabContent" class="tab-content">
     <div class="tab-pane" id="Conf1">
@@ -125,62 +132,7 @@
                         </div>
                     </div>
                 </div>
-                <div class="col-sm-12">
-                    <table class="table  bootstrap-datatable datatable  table-bordered responsive table-hover">
-                        <thead>
-                        <tr>
-                            <th >序号</th>
-                            <th >类型</th>
-                            <th>所在库</th>
-                            <th>来源</th>
-                            <th >项目</th>
-                            <th >内容</th>
-                            <th class="col-sm-3">标准</th>
-                            <th class="col-sm-3">符合性判定标准</th>
-                            <th >修订</th>
-                            <th >删除</th>
-                        </tr>
-                        </thead>
-                        <tbody>
-                        <volist name="Check_ret" id="vo">
-                            <tr>
-                                <td>
-                                    {$vo.id}
-                                </td>
-                                <td>
-                                    {$vo.CheckSourceType}
-                                </td>
-                                <td>
-                                    {$vo.BelongDBs}
-                                </td>
-                                <td>
-                                    {$vo.CheckSource}
-                                </td>
-                                <td>
-                                    {$vo.CheckSubject}
-                                </td>
-                                <td>
-                                    {$vo.CheckContent}
-                                </td>
-                                <td>
-                                    {$vo.CheckStandard}
-                                </td>
-                                <td>
-                                    {$vo.CheckConfirmStd}
-                                </td>
-                                <td>
-                                    <a class="btn btn-info btn-sm" href="#" XDBtnID = "{$vo.id}"  >修订</a>
-                                </td>
-                                <td>
-                                    <a class="btn btn-danger btn-sm" href="#" BtnID = "{$vo.id}" >删除</a>
-                                </td>
-                            </tr>
-                        </volist>
-                        </tbody>
-                    </table>
-                </div>
-
-            </form>
+             </form>
 
         </div>
     </div>
@@ -235,7 +187,6 @@
             </div>
             </form>
 
-
         </div>
     </div>
     <div class="tab-pane" id="Conf3">
@@ -288,10 +239,84 @@
                     </table>
                 </div>
             </form>
-
+        </div>
 
         </div>
-    </div>
+        <div class="tab-pane" id="Conf4">
+            <div class="container-fluid" style="margin-top:30px">
+                <form class="form-horizontal" id="" role="form" enctype="multipart/form-data" method="post" action="{:U('CheckBaseMng/AddCheckDB')}">
+
+                <div class="" style="overflow:scroll; width:100%; height:800px;">
+            <table data-toggle="table"
+                   data-toolbar="#toolbar"
+                   data-search="true"
+                   data-show-refresh="true"
+                   data-show-toggle="true"
+                   data-show-columns="true"
+                   data-show-export="true"
+                   data-minimum-count-columns="2"
+                   data-id-field="id"
+                   data-show-footer="false"
+                   data-classes="table table-bordered"
+                   data-response-handler="responseHandler"
+                   style="min-width:  150%;"
+                   class="table  bootstrap-datatable datatable  table-bordered responsive table-hover"
+            >
+                <thead>
+                <tr>
+                    <th >序号</th>
+                    <th class="col-sm-1">类型</th>
+                    <th class="col-sm-1">所在库</th>
+                    <th class="col-sm-1">来源</th>
+                    <th class="col-sm-1">项目</th>
+                    <th class="col-sm-2">内容</th>
+                    <th class="col-sm-3">标准</th>
+                    <th class="col-sm-4">符合性判定标准</th>
+                    <th >修订</th>
+                    <th >删除</th>
+                </tr>
+                </thead>
+                <tbody>
+                <volist name="Check_ret" id="vo">
+                    <tr>
+                        <td>
+                            {$vo.id}
+                        </td>
+                        <td>
+                            {$vo.CheckSourceType}
+                        </td>
+                        <td>
+                            {$vo.BelongDBs}
+                        </td>
+                        <td>
+                            {$vo.CheckSource}
+                        </td>
+                        <td>
+                            {$vo.CheckSubject}
+                        </td>
+                        <td>
+                            {$vo.CheckContent}
+                        </td>
+                        <td>
+                            {$vo.CheckStandard}
+                        </td>
+                        <td>
+                            {$vo.CheckConfirmStd}
+                        </td>
+                        <td>
+                            <a class="btn btn-info btn-sm" href="#" XDBtnID = "{$vo.id}"  >修订</a>
+                        </td>
+                        <td>
+                            <a class="btn btn-danger btn-sm" href="#" BtnID = "{$vo.id}" >删除</a>
+                        </td>
+                    </tr>
+                </volist>
+                </tbody>
+            </table>
+        </div>
+                </form>
+            </div>
+        </div>
 </div>
 
 </body>

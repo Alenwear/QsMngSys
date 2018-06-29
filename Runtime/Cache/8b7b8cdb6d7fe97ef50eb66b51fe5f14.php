@@ -63,6 +63,7 @@
 
     <!-- data table plugin -->
     <script src='__PUBLIC__/js/jquery.dataTables.min.js'></script>
+    <script src='__PUBLIC__/js/bootstrap-table.js'></script>
 
     <!-- select or dropdown enhancer -->
     <script src="__PUBLIC__/bower_components/chosen/chosen.jquery.min.js"></script>
@@ -95,6 +96,7 @@
     <link href="__PUBLIC__/css/select2.min.css" rel="stylesheet" />
     <script src="__PUBLIC__/js/select2.min.js"></script>
     <link href="__PUBLIC__/css/bootstrap-datetimepicker.css" rel="stylesheet">
+    <link href="__PUBLIC__/css/ bootstrap-table.css" rel="stylesheet">
     <script src="__PUBLIC__/js/bootstrap-datetimepicker.js"></script>
     <script src="https://cdn.bootcss.com/html5shiv/3.7.2/html5shiv.min.js"></script>
     <script src="https://cdn.bootcss.com/respond.js/1.4.2/respond.js"></script>
@@ -126,7 +128,7 @@
                             <li class="divider"></li>
                             <li class="dropdown"><a href="<?php echo U('Flight/index');?>">XXXXX</a></li>
                             <li class="divider"></li>
-                            <li class="dropdown"><a href="<?php echo U('UserMng/index');?>" href="#">XXXXX</a></li>
+                            <li class="dropdown"><a href="<?php echo U('UserMng/index');?>" href="#">人员管理</a></li>
                         </ul>
                     </li>
 
@@ -223,16 +225,28 @@
                     </div>
               <hr/>
 
-                <div class="col-sm-12">
-                    <table class="table  bootstrap-datatable datatable  table-bordered responsive table-hover">
+                <div class="col-sm-12"  style="overflow:scroll;">
+                    <table class="table  bootstrap-datatable datatable  table-bordered responsive table-hover" style="min-width:  150%;"
+                           data-toggle="table"
+                           data-toolbar="#toolbar"
+                           data-search="true"
+                           data-show-refresh="true"
+                           data-show-toggle="true"
+                           data-show-columns="true"
+                           data-show-export="true"
+                           data-minimum-count-columns="2"
+                           data-id-field="id"
+                           data-show-footer="false"
+                           data-classes="table table-bordered"
+                           data-response-handler="responseHandler">
                         <thead>
                         <tr>
                             <th >序号</th>
-                            <th >类型</th>
-                            <th>来源</th>
-                            <th >项目</th>
-                            <th >内容</th>
-                            <th class="col-sm-4">标准</th>
+                            <th class="col-sm-1">类型</th>
+                            <th class="col-sm-1">来源</th>
+                            <th class="col-sm-1">项目</th>
+                            <th class="col-sm-2">内容</th>
+                            <th class="col-sm-3">标准</th>
                             <th class="col-sm-4">符合性判定标准</th>
                             <th >加入</th>
                             <th >状态</th>

@@ -63,6 +63,7 @@
 
     <!-- data table plugin -->
     <script src='__PUBLIC__/js/jquery.dataTables.min.js'></script>
+    <script src='__PUBLIC__/js/bootstrap-table.js'></script>
 
     <!-- select or dropdown enhancer -->
     <script src="__PUBLIC__/bower_components/chosen/chosen.jquery.min.js"></script>
@@ -95,6 +96,7 @@
     <link href="__PUBLIC__/css/select2.min.css" rel="stylesheet" />
     <script src="__PUBLIC__/js/select2.min.js"></script>
     <link href="__PUBLIC__/css/bootstrap-datetimepicker.css" rel="stylesheet">
+    <link href="__PUBLIC__/css/ bootstrap-table.css" rel="stylesheet">
     <script src="__PUBLIC__/js/bootstrap-datetimepicker.js"></script>
     <script src="https://cdn.bootcss.com/html5shiv/3.7.2/html5shiv.min.js"></script>
     <script src="https://cdn.bootcss.com/respond.js/1.4.2/respond.js"></script>
@@ -126,7 +128,7 @@
                             <li class="divider"></li>
                             <li class="dropdown"><a href="<?php echo U('Flight/index');?>">XXXXX</a></li>
                             <li class="divider"></li>
-                            <li class="dropdown"><a href="<?php echo U('UserMng/index');?>" href="#">XXXXX</a></li>
+                            <li class="dropdown"><a href="<?php echo U('UserMng/index');?>" href="#">人员管理</a></li>
                         </ul>
                     </li>
 
@@ -146,7 +148,13 @@
 <head>
     <meta charset="UTF-8">
     <title>执法依据</title>
-
+    <style>
+        .scroll_table_content{
+            width:100%;
+            height:600px;
+            overflow:auto;
+        }
+    </style>
 </head>
 <body class="container-fluid">
 <ul id="myTab" class="nav nav-tabs" >
@@ -157,6 +165,7 @@
     </li>
     <li id="Confli2"><a href="#Conf2" data-toggle="tab">执法依据来源</a></li>
     <li id="Confli3"><a href="#Conf3" data-toggle="tab">执法库</a></li>
+    <li id="Confli4"><a href="#Conf4" data-toggle="tab">执法条款清单</a></li>
 </ul>
 <div id="myTabContent" class="tab-content">
     <div class="tab-pane" id="Conf1">
@@ -262,60 +271,7 @@
                         </div>
                     </div>
                 </div>
-                <div class="col-sm-12">
-                    <table class="table  bootstrap-datatable datatable  table-bordered responsive table-hover">
-                        <thead>
-                        <tr>
-                            <th >序号</th>
-                            <th >类型</th>
-                            <th>所在库</th>
-                            <th>来源</th>
-                            <th >项目</th>
-                            <th >内容</th>
-                            <th class="col-sm-3">标准</th>
-                            <th class="col-sm-3">符合性判定标准</th>
-                            <th >修订</th>
-                            <th >删除</th>
-                        </tr>
-                        </thead>
-                        <tbody>
-                        <?php if(is_array($Check_ret)): $i = 0; $__LIST__ = $Check_ret;if( count($__LIST__)==0 ) : echo "" ;else: foreach($__LIST__ as $key=>$vo): $mod = ($i % 2 );++$i;?><tr>
-                                <td>
-                                    <?php echo ($vo["id"]); ?>
-                                </td>
-                                <td>
-                                    <?php echo ($vo["CheckSourceType"]); ?>
-                                </td>
-                                <td>
-                                    <?php echo ($vo["BelongDBs"]); ?>
-                                </td>
-                                <td>
-                                    <?php echo ($vo["CheckSource"]); ?>
-                                </td>
-                                <td>
-                                    <?php echo ($vo["CheckSubject"]); ?>
-                                </td>
-                                <td>
-                                    <?php echo ($vo["CheckContent"]); ?>
-                                </td>
-                                <td>
-                                    <?php echo ($vo["CheckStandard"]); ?>
-                                </td>
-                                <td>
-                                    <?php echo ($vo["CheckConfirmStd"]); ?>
-                                </td>
-                                <td>
-                                    <a class="btn btn-info btn-sm" href="#" XDBtnID = "<?php echo ($vo["id"]); ?>"  >修订</a>
-                                </td>
-                                <td>
-                                    <a class="btn btn-danger btn-sm" href="#" BtnID = "<?php echo ($vo["id"]); ?>" >删除</a>
-                                </td>
-                            </tr><?php endforeach; endif; else: echo "" ;endif; ?>
-                        </tbody>
-                    </table>
-                </div>
-
-            </form>
+             </form>
 
         </div>
     </div>
@@ -366,7 +322,6 @@
             </div>
             </form>
 
-
         </div>
     </div>
     <div class="tab-pane" id="Conf3">
@@ -415,10 +370,82 @@
                     </table>
                 </div>
             </form>
-
+        </div>
 
         </div>
-    </div>
+        <div class="tab-pane" id="Conf4">
+            <div class="container-fluid" style="margin-top:30px">
+                <form class="form-horizontal" id="" role="form" enctype="multipart/form-data" method="post" action="<?php echo U('CheckBaseMng/AddCheckDB');?>">
+
+                <div class="" style="overflow:scroll; width:100%; height:800px;">
+            <table data-toggle="table"
+                   data-toolbar="#toolbar"
+                   data-search="true"
+                   data-show-refresh="true"
+                   data-show-toggle="true"
+                   data-show-columns="true"
+                   data-show-export="true"
+                   data-minimum-count-columns="2"
+                   data-id-field="id"
+                   data-show-footer="false"
+                   data-classes="table table-bordered"
+                   data-response-handler="responseHandler"
+                   style="min-width:  150%;"
+                   class="table  bootstrap-datatable datatable  table-bordered responsive table-hover"
+            >
+                <thead>
+                <tr>
+                    <th >序号</th>
+                    <th class="col-sm-1">类型</th>
+                    <th class="col-sm-1">所在库</th>
+                    <th class="col-sm-1">来源</th>
+                    <th class="col-sm-1">项目</th>
+                    <th class="col-sm-2">内容</th>
+                    <th class="col-sm-3">标准</th>
+                    <th class="col-sm-4">符合性判定标准</th>
+                    <th >修订</th>
+                    <th >删除</th>
+                </tr>
+                </thead>
+                <tbody>
+                <?php if(is_array($Check_ret)): $i = 0; $__LIST__ = $Check_ret;if( count($__LIST__)==0 ) : echo "" ;else: foreach($__LIST__ as $key=>$vo): $mod = ($i % 2 );++$i;?><tr>
+                        <td>
+                            <?php echo ($vo["id"]); ?>
+                        </td>
+                        <td>
+                            <?php echo ($vo["CheckSourceType"]); ?>
+                        </td>
+                        <td>
+                            <?php echo ($vo["BelongDBs"]); ?>
+                        </td>
+                        <td>
+                            <?php echo ($vo["CheckSource"]); ?>
+                        </td>
+                        <td>
+                            <?php echo ($vo["CheckSubject"]); ?>
+                        </td>
+                        <td>
+                            <?php echo ($vo["CheckContent"]); ?>
+                        </td>
+                        <td>
+                            <?php echo ($vo["CheckStandard"]); ?>
+                        </td>
+                        <td>
+                            <?php echo ($vo["CheckConfirmStd"]); ?>
+                        </td>
+                        <td>
+                            <a class="btn btn-info btn-sm" href="#" XDBtnID = "<?php echo ($vo["id"]); ?>"  >修订</a>
+                        </td>
+                        <td>
+                            <a class="btn btn-danger btn-sm" href="#" BtnID = "<?php echo ($vo["id"]); ?>" >删除</a>
+                        </td>
+                    </tr><?php endforeach; endif; else: echo "" ;endif; ?>
+                </tbody>
+            </table>
+        </div>
+                </form>
+            </div>
+        </div>
 </div>
 
 </body>
